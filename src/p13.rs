@@ -27,7 +27,7 @@ pub fn comp(_g: Graph) {
 // 対象Sの親：V\SのうちSと合わせてcliqueになるような頂点のうち最小のものをSに加えた集合
 fn a(_s: Vec<usize>, _g: Graph) {
     // 1. Sの中でcut-vertexでないものを列挙：lowlink，O(V + E)
-    // 2. v := min{min{v \in Sで V\S の一つのみと隣接する}, max{v \in Sで vは隣接しないがv+1が2個以上と隣接する}}：O(V + E)
+    // 2. v := min{min{v \in Sで V\S の一つのみと隣接する}, max{v \in Sで vは隣接しないがvの次が2個以上と隣接する}}：O(V + E)
     // 3. reverse traverse：s \in S がcut-vertexでない O(1)
     // 4. forward traverse：s \in S が 2で定めたv以下
     unimplemented!()
