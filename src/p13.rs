@@ -15,7 +15,10 @@ pub struct Edges {
     edges: Vec<(usize, usize)>,
 }
 
-// 最悪時線形時間遅延アルゴリズム
+/// 入力：無向グラフ G
+/// 出力：Gのクリーク全て
+///
+/// 最悪時線形時間遅延アルゴリズム
 pub fn comp(_g: Graph) {
     println!("Practice 13");
     // Gを連結成分C_1, C_2, ..., C_kに分解する O(V + E)

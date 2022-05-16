@@ -1,4 +1,7 @@
-// 最悪時線形時間遅延アルゴリズム
+/// 入力：自然数 n，N
+/// 出力：{1,..,n}の部分集合で要素和がNのもの全て
+///
+/// 最悪時線形時間遅延アルゴリズム
 pub fn comp(n: usize, capital_n: usize) {
     println!("Practice 06");
     let mut v = vec![false; n];
@@ -18,9 +21,9 @@ pub fn comp(n: usize, capital_n: usize) {
     println!()
 }
 
-// 根：nから降順にNを超えないように足していき，ちょうどNになるような部分集合
-// 対象Sの親：Sの最小の要素から1を引き，
-// ２番目に小さいものから昇順に見ていき足せる初めの要素に1を足したもの
+/// 根：nから降順にNを超えないように足していき，ちょうどNになるような部分集合
+/// 対象Sの親：Sの最小の要素から1を引き，
+/// ２番目に小さいものから昇順に見ていき足せる初めの要素に1を足したもの
 fn a(parent: &mut [bool]) {
     print_set(parent);
     let indeces = parent
