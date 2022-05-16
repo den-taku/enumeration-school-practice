@@ -1,4 +1,3 @@
-// 簡単のため n >= 2 の実装
 pub fn comp(n: usize, capital_n: usize) {
     println!("Practice 06");
     let mut v = vec![false; n];
@@ -29,7 +28,6 @@ fn a(parent: &mut [bool]) {
         .filter(|(_, e)| **e)
         .map(|(i, _)| i)
         .collect::<Vec<_>>();
-    // println!("indeces: {indeces:?}");
     // 1, a, a+2以上, ... -> a+1, a+2以上, ...
     if indeces[0] > 1 {
         parent[0] = true;
