@@ -1,5 +1,6 @@
 mod p04;
 mod p06;
+mod p13;
 
 fn main() {
     p04::comp(5);
