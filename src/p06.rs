@@ -1,3 +1,4 @@
+// 最悪時線形時間遅延アルゴリズム
 pub fn comp(n: usize, capital_n: usize) {
     println!("Practice 06");
     let mut v = vec![false; n];
