@@ -13,7 +13,7 @@ pub fn comp(n: usize, capital_n: usize) {
         }
     }
     if sum == capital_n {
-        a(&mut v, n, capital_n);
+        a(&mut v);
     }
     println!()
 }
@@ -21,7 +21,7 @@ pub fn comp(n: usize, capital_n: usize) {
 // 根：nから降順にNを超えないように足していき，ちょうどNになるような部分集合
 // 対象Sの親：Sの最小の要素から1を引き，
 // ２番目に小さいものから昇順に見ていき足せる初めの要素に1を足したもの
-fn a(parent: &mut [bool], n: usize, capital_n: usize) {
+fn a(parent: &mut [bool]) {
     print_set(parent);
     let indeces = parent
         .iter()
@@ -35,7 +35,7 @@ fn a(parent: &mut [bool], n: usize, capital_n: usize) {
         parent[0] = true;
         parent[indeces[0]] = false;
         parent[indeces[0] - 1] = true;
-        a(parent, n, capital_n);
+        a(parent);
         parent[0] = false;
         parent[indeces[0]] = true;
         parent[indeces[0] - 1] = false;
@@ -51,7 +51,7 @@ fn a(parent: &mut [bool], n: usize, capital_n: usize) {
                 parent[0] = true;
                 parent[indeces[i]] = false;
                 parent[indeces[i] - 1] = true;
-                a(parent, n, capital_n);
+                a(parent);
                 parent[0] = false;
                 parent[indeces[i]] = true;
                 parent[indeces[i] - 1] = false;
@@ -65,7 +65,7 @@ fn a(parent: &mut [bool], n: usize, capital_n: usize) {
         parent[indeces[0] + 1] = true;
         parent[indeces[1]] = false;
         parent[indeces[1] - 1] = true;
-        a(parent, n, capital_n);
+        a(parent);
         parent[indeces[0]] = true;
         parent[indeces[0] + 1] = false;
         parent[indeces[1]] = true;
@@ -83,7 +83,7 @@ fn a(parent: &mut [bool], n: usize, capital_n: usize) {
                 parent[indeces[0] + 1] = true;
                 parent[indeces[i]] = false;
                 parent[indeces[i] - 1] = true;
-                a(parent, n, capital_n);
+                a(parent);
                 parent[indeces[0]] = true;
                 parent[indeces[0] + 1] = false;
                 parent[indeces[i]] = true;
