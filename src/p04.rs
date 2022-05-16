@@ -2,7 +2,9 @@ use std::collections::HashSet;
 
 // 多分 最悪時線形時間遅延アルゴリズムになっているはず
 pub fn comp(n: usize) {
+    println!("Practice 04");
     a(HashSet::new(), n + 1);
+    println!()
 }
 
 /// 対象Sの親：Sの小さいものから2つ取り除いた部分集合
