@@ -14,6 +14,7 @@ pub fn comp(_g: Graph) {
 // 根：連結成分
 // 対象Sの親：V\SのうちSと合わせてcliqueになるような頂点のうち最小のものをSに加えた集合
 fn a(_s: Vec<usize>, _g: Graph) {
+    // 0. Sを出力
     // 1. Sの中でcut-vertexでないものを列挙：lowlink, O(V + E)
     // 2. v_1 := min{v \in V\S; Sと隣接する}：O(V + E)
     // 3. v_1が１頂点s_1とのみ隣接 → v_2 := min{v \in V\S; S\{s_1}と隣接する}：O(V + E)
