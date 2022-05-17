@@ -1,20 +1,5 @@
 #![allow(dead_code)]
 
-/// G = (V, E)
-pub struct Graph {
-    vertices: Vertices,
-    edges: Edges,
-}
-
-/// V = {1, ..., n}
-pub struct Vertices {
-    n: usize,
-}
-
-pub struct Edges {
-    edges: Vec<(usize, usize)>,
-}
-
 /// 入力：無向グラフ G
 /// 出力：Gのクリーク全て
 ///
@@ -35,4 +20,19 @@ fn a(_s: Vec<usize>, _g: Graph) {
     // 4. reverse traverse：s \in S がcut-vertexでない O(1)
     // 5. forward traverse：v_1が２頂点以上と隣接 → v_1以下，v_1が１頂点のみと隣接 → v_1以下またはs_1でs_1 <= v_2 O(1)
     unimplemented!()
+}
+
+/// G = (V, E)
+pub struct Graph {
+    vertices: Vertices,
+    edges: Edges,
+}
+
+/// V = {1, ..., n}
+pub struct Vertices {
+    n: usize,
+}
+
+pub struct Edges {
+    edges: Vec<(usize, usize)>,
 }
