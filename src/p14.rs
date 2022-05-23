@@ -7,7 +7,7 @@
 /// c.f. T. MASTUI, "An Algorithm for Finding All the Spanning Tree in Undirected Graphs" (1993)
 pub fn comp(_g: Graph) {
     println!("Practice 14");
-    // 1. T ← DFSでspanning treeを構成 O(N + M)
+    // 1. T ← DFSで全張木を構成 O(N + M)
     // 2. Tを{1, 2, ..., N-1}でラベル付けし，残りに{N, ..., M}とラベル付け O(M)
     // 3. a(T, G)を呼び出して終了
     unimplemented!()
