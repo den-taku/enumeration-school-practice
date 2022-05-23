@@ -3,24 +3,25 @@
 /// 入力：無向グラフG
 /// 出力：Gの全張木全て
 ///
-/// 最悪時多項式時間遅延アルゴリズム
+/// 最悪時線形時間遅延アルゴリズム
+/// c.f. T. MASTUI, "An Algorithm for Finding All the Spanning Tree in Undirected Graphs" (1993)
 pub fn comp(_g: Graph) {
     println!("Practice 14");
-    // 1. 辺を添字の小さいものから見ていき，UF木を使って閉路判定しながら全張木Tを生成
-    // 2. Tが構成できたならa(T)を呼び出す
-    // 3. 停止
+    // 1. T ← DFSでspanning treeを構成 O(N + M)
+    // 2. Tを{1, 2, ..., N-1}でラベル付けし，残りに{N, ..., M}とラベル付け O(M)
+    // 3. a(T, G)を呼び出して終了
     unimplemented!()
 }
 
-/// 対象Tの親：E\E(T)から最小の添字のものを選びTに追加する．
-/// この時できたサイクルから最大添字のものを除去した全張木
-/// 根：添字を重みとしてみた最小全張木
+/// 対象Tの親：(T\{e})∪{f}, e:=max(T), f:=min{uとvのカット; e=uv}
+/// 根：{1, 2, ..., N-1}
 pub fn a(_t: Graph, _g: Graph) {
-    // 1. Tを出力
-    // 2. m ← E\E(T)の最小値
-    // 3. TODO: 4をO(1)でできるような前処理を考える
-    // 4. reverse traverse: e \in E\E(T), eを追加してできたT'のサイクルを構成する最小添字の枝をe_1として除去: DFSでO(V + E)
-    // 5. forward traverse: e_1がE\E(T')の中で最小添字: mとの比較でO(1)
+    // 1. x := max(T)
+    // 2. DFSでT\{1,2,..,N-1}の連結成分を構成する頂点たちに同じ値をラベル付け O(N + M)
+    // 3. 各 (e ∈ (E(G)\T))に対し以下を考える O(M)
+    //  3-1. e > x か (otherwise continue loop)
+    //  3-2. e = uvとしてuとvのラベルが異なるか (otherwise continue loop)
+    //  3-3. f := min{eを追加してできる基本サイクル} O(N); a(T\{f})∪{e}, G)
     unimplemented!()
 }
 
