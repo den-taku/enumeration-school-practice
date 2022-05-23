@@ -21,7 +21,7 @@ pub fn a(_t: Graph, _g: Graph) {
     // 3. 各 (e ∈ (E(G)\T))に対し以下を考える O(M)
     //  3-1. e > x か (otherwise continue loop)
     //  3-2. e = uvとしてuとvのラベルが異なるか (otherwise continue loop)
-    //  3-3. f := min{eを追加してできる基本サイクル} O(N); a(T\{f})∪{e}, G)
+    //  3-3. f := {1,2,...,N-1}\{eを追加してできる基本サイクル} O(N); a(T\{f})∪{e}, G)
     unimplemented!()
 }
 
